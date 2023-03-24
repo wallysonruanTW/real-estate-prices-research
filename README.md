@@ -28,7 +28,7 @@ A real state company wants to know what is the <media> of apartments and houses 
 ## Resources
 
 ### APIs
-- IBGE: https://servicodados.ibge.gov.br/api/v1/localidades/estados/SP/distritos
+- IBGE: https://servicodados.ibge.gov.br/api/v1/localidades/municipios/3550308/distritos
 
 ### Websites to be Scrapped
 - ZAP IMOVEIS: https://www.zapimoveis.com.br/
