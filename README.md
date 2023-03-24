@@ -35,8 +35,8 @@ A real state company wants to know what is the <media> of apartments and houses 
 
 ## Roadmap
 
-- [ ] Find an API that contains the neighborhoods São Paulo, SP;
-- [ ] Both the name and the region of the city.
+- [X] Find an API that contains the neighborhoods São Paulo, SP;
+  - Both the name and the region of the city.
 - [ ] Collect the neighborhoods, process them and add them to a CSV file;
 - [ ] Store the file in the cloud;
 - [ ] Choose one or more real estate websites;
