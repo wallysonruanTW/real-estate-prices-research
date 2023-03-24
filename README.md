@@ -41,7 +41,7 @@ A real state company wants to know what is the average price of apartments and h
 
 - [X] Find an API that contains the districts São Paulo, SP;
   - Both the name and the region of the city.
-- [ ] Collect the districts, process them and add them to a CSV file;
+- [X] Collect the districts, process them and add them to a CSV file;
 - [ ] Store the file in the cloud;
 - [X] Choose one or more real estate websites;
 - [ ] Extract the necessary data for analysis and put them in CSV files; 
