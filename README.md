@@ -30,6 +30,10 @@ A real state company wants to know what is the <media> of apartments and houses 
 ### APIs
 - IBGE: https://servicodados.ibge.gov.br/api/v1/localidades/estados/SP/distritos
 
+### Websites to be Scrapped
+- ZAP IMOVEIS: https://www.zapimoveis.com.br/
+- Imovel WEB: https://www.imovelweb.com.br/
+
 ### Courses
 - UDEMY | Automate Everything with Python: https://thoughtworks.udemy.com/course/automate-everything-with-python/
 
@@ -39,7 +43,7 @@ A real state company wants to know what is the <media> of apartments and houses 
   - Both the name and the region of the city.
 - [ ] Collect the neighborhoods, process them and add them to a CSV file;
 - [ ] Store the file in the cloud;
-- [ ] Choose one or more real estate websites;
+- [X] Choose one or more real estate websites;
 - [ ] Extract the necessary data for analysis and put them in CSV files; 
   - Type of residence;
   - Neighborhood;
