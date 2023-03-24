@@ -23,7 +23,7 @@ A real state company wants to know what is the <media> of apartments and houses 
 - Github.
 
 ### Website Hosting
-- Github Pages.
+- GitHub Pages.
 
 ## Resources
 
