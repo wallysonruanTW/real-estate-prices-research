@@ -1,7 +1,7 @@
 # Real State Prices Research
 
 ## Business Problem
-A real state company wants to know what is the <media> of apartments and houses in São Paulo city.
+A real state company wants to know what is the average price of apartments and houses in São Paulo city.
 
 ## Tools used
 
@@ -39,21 +39,21 @@ A real state company wants to know what is the <media> of apartments and houses 
 
 ## Roadmap
 
-- [X] Find an API that contains the neighborhoods São Paulo, SP;
+- [X] Find an API that contains the districts São Paulo, SP;
   - Both the name and the region of the city.
-- [ ] Collect the neighborhoods, process them and add them to a CSV file;
+- [ ] Collect the districts, process them and add them to a CSV file;
 - [ ] Store the file in the cloud;
 - [X] Choose one or more real estate websites;
 - [ ] Extract the necessary data for analysis and put them in CSV files; 
   - Type of residence;
-  - Neighborhood;
+  - District;
   - Price.
 - [ ] Store the files in the cloud;
 - [ ] Make the process recurrent until the limit of 100 residences is reached;
 - [ ] Access the data in the cloud;
 - [ ] Process them; 
   - Standardize; 
-  - Segregate by neighborhoods; 
+  - Segregate by districts; 
   - Calculate the average.
 - [ ] Create an API to make the data available;
 - [ ] Create a website to make the data available;
