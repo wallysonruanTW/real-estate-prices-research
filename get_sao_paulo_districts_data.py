@@ -8,7 +8,7 @@ csv_path = "csv_files/sao_paulo_districts_names.csv"
 
 def getDistrictsNames(api_url: str):
     response = requests.get(api_url)
-    if response.status_code != 200:
+    if response.status_code is not 200:
         return
     districts = json.loads(response.text)
     data = []
