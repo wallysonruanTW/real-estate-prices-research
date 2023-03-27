@@ -44,10 +44,10 @@ A real state company wants to know what is the average price of apartments and h
 - [X] Collect the districts, process them and add them to a CSV file;
 - [ ] Store the file in the cloud;
 - [X] Choose one or more real estate websites;
-- [ ] Extract the necessary data for analysis and put them in CSV files; 
-  - Type of residence;
-  - District;
-  - Price.
+- [X] Extract the necessary data for analysis and put them in CSV files; 
+  - [ ] Type of residence;
+  - [X] District;
+  - [X] Price.
 - [ ] Store the files in the cloud;
 - [ ] Make the process recurrent until the limit of 100 residences is reached;
 - [ ] Access the data in the cloud;
