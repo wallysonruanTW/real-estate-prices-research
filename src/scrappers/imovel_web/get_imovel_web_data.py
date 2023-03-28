@@ -100,15 +100,21 @@ elements = parent_element.find_elements(By.CLASS_NAME, r'sc-i1odl-2')
 
 for element in elements:
     price = element.find_elements(By.CLASS_NAME, r'sc-12dh9kl-4')
-    address = element.find_elements(By.CLASS_NAME, r'sc-ge2uzh-1')
+    street_and_door_number = element.find_elements(By.CLASS_NAME, r'sc-ge2uzh-0')
+    district_and_city = element.find_elements(By.CLASS_NAME, r'sc-ge2uzh-2')
 
     if len(price) > 0:
         price = price[0].text
 
-    if len(address) > 0:
-        address = address[0].text
+    if len(street_and_door_number) > 0:
+        street_and_door_number = street_and_door_number[0].text.split(",")[0]
 
-    if len(price) > 0 and len(address) > 0:
-        save_raw_data_to_csv(address, price, datetime.date.today(), raw_data_csv_path)
+    if len(district_and_city) > 0:
+        district_and_city = district_and_city[0].text.split(",")[0]
+
+    if len(street_and_door_number) > 0 and len(district_and_city) > 0:
+        address = street_and_door_number + ", " + district_and_city
+
+    save_raw_data_to_csv(address, price, datetime.date.today(), raw_data_csv_path)
 
 clean_imovel_web_data(raw_data_csv_path, clean_data_csv_path)
