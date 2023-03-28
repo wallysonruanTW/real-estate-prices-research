@@ -18,6 +18,8 @@ A real state company wants to know what is the average price of apartments and h
 - Csv
 - Os
 - Datetime
+- Poetry
+- MKDocs
 
 ### Cloud
 - Microsoft Azure;
@@ -40,6 +42,9 @@ A real state company wants to know what is the average price of apartments and h
 
 ### Courses
 - UDEMY | Automate Everything with Python: https://thoughtworks.udemy.com/course/automate-everything-with-python/
+
+### Tutorials
+- Eduardo Mendes | Criando nosso ambiente do pacote python com Poetry, linters, testes e documentação: https://www.youtube.com/watch?v=uXQv2cciCeI&ab_channel=EduardoMendes
 
 ## Roadmap
 
