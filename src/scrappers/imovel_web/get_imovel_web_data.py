@@ -37,7 +37,7 @@ def save_clean_data_to_csv(street, district, price, date, csv_path):
     with open(csv_path, open_mode) as imovel_web_csv:
         writer = csv.DictWriter(imovel_web_csv, headers)
 
-        if get_csv_number_of_rows(csv_path) > 0:
+        if csv_utils.get_csv_number_of_rows(csv_path) > 0:
             writer.writerow({headers[0]: street, headers[1]: district, headers[2]: price, headers[3]: date})
             return
 
