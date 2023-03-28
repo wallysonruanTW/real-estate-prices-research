@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/data/cleaned/real_state/zap_imoveis/2023-03-28_zap_imoveis_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/data/raw/real_state/imovel_web/2023-03-27_imoveis_web_data.csv">
           <value>
             <Attribute>
