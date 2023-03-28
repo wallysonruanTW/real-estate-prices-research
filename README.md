@@ -14,6 +14,10 @@ A real state company wants to know what is the average price of apartments and h
 
 ### Libraries and Frameworks
 - Selenium
+- Pandas
+- Csv
+- Os
+- Datetime
 
 ### Cloud
 - Microsoft Azure;
@@ -32,7 +36,7 @@ A real state company wants to know what is the average price of apartments and h
 
 ### Websites to be Scrapped
 - ZAP IMOVEIS: https://www.zapimoveis.com.br/
-- Imovel WEB: https://www.imovelweb.com.br/
+- Imovel Web: https://www.imovelweb.com.br/
 
 ### Courses
 - UDEMY | Automate Everything with Python: https://thoughtworks.udemy.com/course/automate-everything-with-python/
@@ -58,3 +62,6 @@ A real state company wants to know what is the average price of apartments and h
 - [ ] Create an API to make the data available;
 - [ ] Create a website to make the data available;
   - Create a table to visualize them;
+
+## Learnings
+<add>
