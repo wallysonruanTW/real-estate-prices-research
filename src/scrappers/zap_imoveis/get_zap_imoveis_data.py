@@ -5,15 +5,7 @@ import pandas
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
-
-def get_csv_number_of_rows(csv_path):
-    row_count = -1
-
-    for row in open(csv_path):
-        row_count += 1
-
-    return row_count
+from utils import csv_utils
 
 
 def save_raw_data_to_csv(adress, price, date, csv_path):
@@ -27,7 +19,7 @@ def save_raw_data_to_csv(adress, price, date, csv_path):
     with open(csv_path, open_mode) as zap_imoveis_csv:
         writer = csv.DictWriter(zap_imoveis_csv, headers)
 
-        if get_csv_number_of_rows(csv_path) > 0:
+        if csv_utils.get_csv_number_of_rows(csv_path) > 0:
             writer.writerow({headers[0]: adress, headers[1]: price, headers[2]: date})
             return
 
