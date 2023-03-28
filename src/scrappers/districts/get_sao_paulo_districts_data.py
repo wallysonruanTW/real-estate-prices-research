@@ -4,7 +4,7 @@ import requests, json, csv
 
 # Documentation: https://servicodados.ibge.gov.br/api/docs/localidades#api-Distritos-municipiosMunicipioDistritosGet
 api_url = "https://servicodados.ibge.gov.br/api/v1/localidades/municipios/3550308/distritos"
-csv_path = "csv_files/sao_paulo_districts_names.csv"
+csv_path = "../../../data/raw/district/sao_paulo_districts_names.csv"
 
 def getDistrictsNames(api_url: str):
     response = requests.get(api_url)
