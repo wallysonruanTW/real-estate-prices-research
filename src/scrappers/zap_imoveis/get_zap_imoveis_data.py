@@ -8,8 +8,17 @@ from utils import csv_utils
 
 
 def save_raw_data_to_csv(adress, price, date, csv_path):
-    headers = ["address", "price", "date"]
+    """Create a csv file if none exists, and name it accordingly to the following format:
+    [date_of_execution]_zap_imoveis_data.csv
 
+    :param adress:
+    :param price:
+    :param date:
+    :param csv_path:
+    :return: None
+    """
+
+    headers = ["address", "price", "date"]
     open_mode = "a"
 
     if os.path.isfile(csv_path) is False:
