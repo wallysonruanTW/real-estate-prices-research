@@ -27,8 +27,9 @@ def save_clean_data_to_csv(street, district, price, date, csv_path):
 
 def get_street_and_district_from_address_column(address: str):
     full_address = address.split(",")
+    street = "".join((letter for letter in full_address[0] if not letter.isdigit()))
     separated_address = {
-        "street": full_address[0],
+        "street": street,
         "district": full_address[-1]
     }
     return separated_address
