@@ -89,7 +89,7 @@ def clean_zap_imoveis_data(raw_data_csv_path:str, path_to_store_the_cleaned_data
 zap_imoveis_url = "https://www.zapimoveis.com.br/venda/imoveis/sp+sao-paulo/"
 raw_data_csv_path = "../../../data/raw/real_state/zap_imoveis/{date}_zap_imoveis_data.csv".format(
     date=datetime.date.today())
-cleaned_data_csv_path = "../../../data/cleaned/real_state/zap_imoveis/{date}_zap_imoveis_data.csv".format(
+cleaned_data_csv_path = "../../../data/clean/real_state/zap_imoveis/{date}_zap_imoveis_data.csv".format(
     date=datetime.date.today())
 
 browser = webdriver.Chrome()
