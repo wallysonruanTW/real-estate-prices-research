@@ -1,6 +1,7 @@
 import csv
 import datetime
 import os
+import pandas
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -15,27 +16,56 @@ def get_csv_number_of_rows(csv_path):
     return row_count
 
 
-def save_to_csv(adress, price, csv_path):
+def save_to_csv(adress, price, date, csv_path):
     headers = ["address", "price", "date"]
-    open_mode = "w"
 
-    if os.path.isfile(csv_path):
-        open_mode = "a"
+    open_mode = "a"
 
-    with open(csv_path, open_mode) as imoveis_web_csv:
-        writer = csv.DictWriter(imoveis_web_csv, headers)
+    if os.path.isfile(csv_path) is False:
+        open_mode = "x"
+
+    print(open_mode)
+    with open(csv_path, open_mode) as zap_imoveis_csv:
+        writer = csv.DictWriter(zap_imoveis_csv, headers)
 
         if get_csv_number_of_rows(csv_path) > 0:
-            writer.writerow({headers[0]: adress, headers[1]: price, headers[2]: datetime.date.today()})
+            writer.writerow({headers[0]: adress, headers[1]: price, headers[2]: date})
             return
 
         writer.writeheader()
-        writer.writerow({headers[0]: adress, headers[1]: price, headers[2]: datetime.date.today()})
+        writer.writerow({headers[0]: adress, headers[1]: price, headers[2]: date})
+
+
+def get_street_and_district_from_address_column(address: str):
+    full_address = address.split()
+    separated_address = {
+        "street": full_address[0],
+        "district": full_address[1]
+    }
+    return separated_address
+
+
+def get_only_the_numbers_from_price_column(price):
+    return price.replace("R$", "")
+
+
+def clean_zap_imoveis_data(raw_data_csv_path, path_to_store_the_cleaned_data):
+    csv_file = pandas.read_csv(raw_data_csv_path)
+    addresses = csv_file["address"].tolist()
+    prices = csv_file["price"].tolist()
+    dates = csv_file["date"].tolist()
+
+    i = 0
+
+    while i < len(addresses):
+        save_to_csv(addresses[i], prices[i], dates[i], path_to_store_the_cleaned_data)
+        i += 1
 
 
 # Link to the first page of the website, with the filter set to look for houses in São Paulo, SP, Brazil
 zap_imoveis_url = "https://www.zapimoveis.com.br/venda/imoveis/sp+sao-paulo/"
-csv_path = "../../../data/raw/real_state/zap_imoveis/{date}_zap_imoveis_data.csv".format(date=datetime.date.today())
+raw_data_csv_path = "../../../data/raw/real_state/zap_imoveis/{date}_zap_imoveis_data.csv".format(date=datetime.date.today())
+cleaned_data_csv_path = "../../../data/cleaned/real_state/zap_imoveis/{date}_zap_imoveis_data.csv".format(date=datetime.date.today())
 
 browser = webdriver.Chrome()
 browser.get(zap_imoveis_url)
@@ -46,4 +76,7 @@ elements = parent_element.find_elements(By.CLASS_NAME, "card-container")
 for element in elements:
     price: str = element.find_elements(By.CLASS_NAME, "simple-card__price")[0].text
     address: str = element.find_elements(By.CLASS_NAME, "simple-card__address")[0].text
-    save_to_csv(address, price, csv_path)
+    save_to_csv(address, price, datetime.date.today(), raw_data_csv_path)
+    print("oi")
+
+clean_zap_imoveis_data(raw_data_csv_path, cleaned_data_csv_path)
