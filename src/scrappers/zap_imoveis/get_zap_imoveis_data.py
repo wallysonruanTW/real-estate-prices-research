@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from utils import csv_utils
 
 
-def save_raw_data_to_csv(adress, price, date, csv_path):
+def save_raw_data_to_csv(adress: str, price: str, date: datetime.date, csv_path: str) -> None:
     """Create a csv file if none exists, and name it accordingly to the following format:
     [date_of_execution]_zap_imoveis_data.csv
 
