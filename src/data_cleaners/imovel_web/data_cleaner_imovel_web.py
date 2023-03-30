@@ -25,7 +25,7 @@ def save_clean_data_to_csv(street, district, price, date, csv_path):
         writer.writerow({headers[0]: street, headers[1]: district, headers[2]: price, headers[3]: date})
 
 
-def get_street_and_district_from_address_column(address: str):
+def get_street_and_district_from_address(address: str):
     full_address = address.split(",")
     street = "".join((letter for letter in full_address[0] if not letter.isdigit()))
     separated_address = {
@@ -35,8 +35,8 @@ def get_street_and_district_from_address_column(address: str):
     return separated_address
 
 
-def get_only_the_numbers_from_price_column(price: str):
-    return price.replace("R$", "")
+def get_only_the_numbers_from_price(price: str):
+    return "".join((caracter for caracter in price[0] if caracter.isdigit()))
 
 
 def clean_imovel_web_data(raw_data_csv_path: str, path_to_store_the_cleaned_data: str) -> None:
@@ -48,8 +48,8 @@ def clean_imovel_web_data(raw_data_csv_path: str, path_to_store_the_cleaned_data
     i = 0
 
     while i < len(addresses):
-        price = get_only_the_numbers_from_price_column(prices[i])
-        address = get_street_and_district_from_address_column(addresses[i])
+        price = get_only_the_numbers_from_price(prices[i])
+        address = get_street_and_district_from_address(addresses[i])
         street = address["street"].strip()
         district = address["district"].strip()
 
