@@ -22,12 +22,16 @@ real_states = []
 
 for element in elements:
     price = element.find_elements(By.CLASS_NAME, r'sc-12dh9kl-4')
+
+    # Had to get them separated because the parent element does not add a separator between them.
     street_and_door_number = element.find_elements(By.CLASS_NAME, r'sc-ge2uzh-0')
     district_and_city = element.find_elements(By.CLASS_NAME, r'sc-ge2uzh-2')
 
+    # Some cards do not contain price identified with the same selector
     if len(price) > 0:
         price = price[0].text
 
+    # Some cards do not contain address identified with the same selector
     if len(street_and_door_number) > 0:
         street_and_door_number = street_and_door_number[0].text.split(",")[0]
 
