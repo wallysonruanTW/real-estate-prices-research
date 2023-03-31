@@ -67,6 +67,8 @@ A real state company wants to know what is the average price of apartments and h
 - [ ] Create an API to make the data available;
 - [ ] Create a website to make the data available;
   - Create a table to visualize them;
+- [ ] Get more real state from Zap Imoveis by looping through pages
+- [ ] Adapt the scrapper of the Imoveis Web to deal with the second type of real state card
 
 ## Learnings
 <add>
